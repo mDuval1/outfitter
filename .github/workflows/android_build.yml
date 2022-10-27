@@ -52,7 +52,7 @@ jobs:
 
       - name: Ls around
         run: |
-          cwd
+          pwd
           ls
           ls android
           ls android/app/build/outputs/bundle/release/
