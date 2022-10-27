@@ -13,11 +13,23 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-          cache-dependency-path: package-lock.json
 
-      - name: Install npm dependencies
-        run: |
-          npm ci
+      - name: Cache node modules
+        id: cache-nodemodules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          # caching node_modules
+          path: node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Install Dependencies
+        if: steps.cache-nodemodules.outputs.cache-hit != 'true'
+        run: npm ci
 
       - name: Cache Gradle Wrapper
         uses: actions/cache@v2
@@ -55,7 +67,11 @@ jobs:
           pwd
           ls
           ls android
-          ls android/app/build/outputs/bundle/release/
+          ls android/app
+          ls android/app/build
+          ls android/app/build/outputs
+          ls android/app/build/outputs/bundle
+          ls android/app/build/outputs/bundle/release
 
       - name: Upload App to Google Play
         uses: r0adkll/upload-google-play@v1
