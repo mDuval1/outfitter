@@ -7,7 +7,9 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "np": "np --no-publish",
+    "postversion": "react-native-version"
   },
   "dependencies": {
     "react": "18.1.0",
@@ -28,6 +30,8 @@
     "eslint": "^7.32.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "0.72.3",
+    "np": "^7.6.2",
+    "react-native-version": "^4.0.0",
     "react-test-renderer": "18.1.0",
     "typescript": "^4.8.3"
   },
@@ -41,5 +45,9 @@
       "json",
       "node"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mDuval1/outfitter.git"
   }
 }
