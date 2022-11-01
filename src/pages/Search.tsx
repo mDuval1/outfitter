@@ -1,8 +1,9 @@
 import React from 'react';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
 
 import Section from '../components/Section';
+import Page from '../components/Page';
 
 export const SearchIcon = ({
   focused,
@@ -22,11 +23,11 @@ type SearchProps = {
 
 const Search = ({ navigation }: SearchProps) => {
   return (
-    <View>
+    <Page>
       <Section title="Closet">
         <Text>Search</Text>
       </Section>
-    </View>
+    </Page>
   );
 };
 

@@ -1,8 +1,9 @@
 import React from 'react';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
 
 import Section from '../components/Section';
+import Page from '../components/Page';
 
 export const OutfitsIcon = ({
   focused,
@@ -22,11 +23,11 @@ type OutfitsProps = {
 
 const Outfits = ({ navigation }: OutfitsProps) => {
   return (
-    <View>
+    <Page>
       <Section title="Outfits">
         <Text>Outfits</Text>
       </Section>
-    </View>
+    </Page>
   );
 };
 

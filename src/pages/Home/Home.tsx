@@ -6,6 +6,7 @@ import Section from '../../components/Section';
 import Header from '../../components/Header';
 import OutfitOfTheDay from './components/OutfitOfTheDay';
 import OutfitIdeas from './components/OutfitIdeas';
+import Page from '../../components/Page';
 
 export const HomeIcon = ({
   focused,
@@ -25,13 +26,12 @@ type HomeProps = {
 
 const Home = ({ navigation }: HomeProps) => {
   return (
-    <View>
-      <Header />
+    <Page>
       <View style={styles.container}>
         <OutfitOfTheDay />
         <OutfitIdeas />
       </View>
-    </View>
+    </Page>
   );
 };
 
